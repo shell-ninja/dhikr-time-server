@@ -7,6 +7,10 @@ dotenv.config();
 const app = express();
 app.use(cors()); // allow requests from your frontend
 
+app.get("/", (req, res) => {
+  res.send("The server is running");
+});
+
 app.get("/api/prayer", async (req, res) => {
   const { lat, lon, method, school } = req.query;
 
