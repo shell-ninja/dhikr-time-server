@@ -10,6 +10,7 @@ app.use(cors()); // allow requests from your frontend
 app.get("/api/prayer", async (req, res) => {
   const { lat, lon, method, school } = req.query;
 
+  console.log(lat, lon, method, school);
   try {
     const response = await fetch(
       `https://islamicapi.com/api/v1/prayer-time/?lat=${lat}&lon=${lon}&method=${method}&school=${school}&api_key=${process.env.API_KEY}`,
